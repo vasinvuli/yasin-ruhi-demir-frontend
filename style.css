@@ -1,0 +1,54 @@
+body {
+    background-color: #1E1E1E;
+  }
+.center {
+    position: absolute;
+    left: 45%;
+    top: 40%;
+}
+.heading{
+    margin-top: 42px;
+    margin-left: 24px;
+    color: white;
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 27px;
+}
+.search{
+    
+width: 327px;
+height: 42px;
+left: 24px;
+top: 93px;
+
+background: #3A3F47;
+border-radius: 16px;
+
+}
+.horizontal{
+
+
+    display: inline-block;
+}
+
+#poster-container{
+    width: 5px;
+    height: 5px;
+    background-color: rgb(255, 255, 255);
+    margin-left: 10px;
+}
+.button {
+    width: 150px;
+    height: 50px;
+    transition-duration: 0.4s;
+    background-color: #555555;
+    border-radius: 50px;
+    color:aqua;
+  }
+  
+.button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }

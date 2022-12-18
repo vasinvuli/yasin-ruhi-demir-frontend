@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Homepage</title>
+</head>
+<body>
+    <h1 class="heading">What do you want to watch?</h1>
+    <input type="text" class="search" placeholder="Selam" id="movie-title" name="fname">
+    <ul>
+        <li class="horizontal">
+            <div class="filmbox">
+
+            </div>
+        </li>
+        <li class="horizontal">
+            <div class="filmbox">
+
+            </div>
+        </li>
+        <li class="horizontal">
+            <div class="filmbox">
+
+            </div>
+        </li>
+      </ul>
+
+      <html>
+      
+  <form id="movie-form">
+    
+
+    <button class="button" type="submit">Search</button>
+  </form>
+  <div id="poster-container"></div>
+
+  
+
+<script>
+    // Listen for the submit event on the form
+    document.getElementById('movie-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Get the movie title from the form input
+      var movieTitle = document.getElementById('movie-title').value;
+
+      // Send the request to the API
+      fetch('https://api.themoviedb.org/3/search/movie?api_key=3c4a75c60ab27c385698962f1c76f654&query=' + movieTitle)
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(data) {
+          // Extract the movie poster URL from the response
+          var posterUrl = data.results[0].poster_path;
+
+          // Create an img element and set its src to the poster URL
+          var posterImg = document.createElement('img');
+          posterImg.src = 'https://image.tmdb.org/t/p/w500/' + posterUrl;
+
+          // Append the img element to the poster container
+          ocudment.getElementById('poster-container').appendChild(posterImg);
+        });
+    });
+  </script>
+</html>
